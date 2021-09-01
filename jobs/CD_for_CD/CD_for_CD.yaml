@@ -1,0 +1,3 @@
+- job:
+    name: CD_for_CD
+    project-type: folder
