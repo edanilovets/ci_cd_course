@@ -1,0 +1,11 @@
+- job:
+    name: CD_for_CD/jenkins_job_builder
+    project-type: freestyle
+    # description: 'CD for CD job'
+    builders:
+      - shell: "jenkins-jobs test -r jobs/"
+    scm:
+      - git:
+          url: https://github.com/edanilovets/ci_cd_course.git
+          branches:
+            - master
