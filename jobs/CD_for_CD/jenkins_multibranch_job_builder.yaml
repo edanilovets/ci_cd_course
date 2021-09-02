@@ -1,0 +1,12 @@
+- job:
+    name: CD_for_CD/jenkins_multibranch_job_builder
+
+    project-type: multibranch
+
+    periodic-folder-trigger: 1w
+    prune-dead-branches: True
+    script-path: 'Jenkinsfile'
+    scm:
+      - github:
+          repo: 'ci_cd_course'
+          repo-owner: 'edanilovets'
