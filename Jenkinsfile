@@ -12,7 +12,7 @@ pipeline {
         }
         stage("Test"){
             steps {
-                sh 'ls -l'
+                sh '/usr/local/bin/jenkins-jobs test -r jobs/ > /dev/null'
             }
         }      
     }
