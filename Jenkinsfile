@@ -5,6 +5,12 @@ pipeline {
     }
 
     stages {
+        stage("Print ENV"){
+            steps {
+                echo sh(script:'env|sort', returnStdout: true)
+            }       
+        }
+
         stage("Checkout repository"){
             steps {
                 git url: 'https://github.com/edanilovets/ci_cd_course.git'
