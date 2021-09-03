@@ -20,6 +20,13 @@ pipeline {
             steps {
                 sh '/usr/local/bin/jenkins-jobs test -r jobs/ > /dev/null'
             }
-        }      
+        }   
+        stage("Update JJB"){
+            when { branch 'master' }
+            // when { environment name: 'BRANCH_NAME', value: 'master'}
+            steps {
+                sh '/usr/local/bin/jenkins-jobs --conf ./jenkins_jobs.ini update -r jobs/'
+            }
+        }    
     }
 }
