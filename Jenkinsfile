@@ -13,7 +13,7 @@ pipeline {
 
         stage("Checkout repository"){
             steps {
-                git url: 'https://github.com/edanilovets/ci_cd_course.git'
+                git branch: "${BRANCH_NAME}", url: 'https://github.com/edanilovets/ci_cd_course.git'
             }       
         }
         stage("Test"){
